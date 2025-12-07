@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.16.0)
 project(usdFileFormats)
 
+set(TBB_ROOT ${source})
+find_package(TBB REQUIRED COMPONENTS tbb)
+
 file(READ "version" VERSION)
 string(REGEX MATCH "([0-9]*).([0-9]*).([0-9]*)" _ ${VERSION})
 set(CPACK_PACKAGE_VERSION_MAJOR ${CMAKE_MATCH_1})
